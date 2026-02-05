@@ -87,6 +87,38 @@ DEVOPS-FULLSTACK/
 │       ├── package-lock.json
 │       └── README.md
 │
+├── Feb_05/
+│   └── online_shop/
+│       ├── public/
+│       │   ├── index.html
+│       │   ├── manifest.json
+│       │   └── robots.txt
+│       ├── src/
+│       │   ├── App.js
+│       │   ├── App.css
+│       │   ├── index.js
+│       │   ├── context/
+│       │   │   └── CartContext.jsx
+│       │   ├── components/
+│       │   │   ├── Home.jsx
+│       │   │   ├── Home.css
+│       │   │   ├── Products.jsx
+│       │   │   ├── Products.css
+│       │   │   ├── ProductDetail.jsx
+│       │   │   ├── ProductDetail.css
+│       │   │   ├── Cart.jsx
+│       │   │   ├── Cart.css
+│       │   │   ├── NavBar.jsx
+│       │   │   ├── NavBar.css
+│       │   │   ├── Layout.jsx
+│       │   │   ├── NotFound.jsx
+│       │   │   └── NotFound.css
+│       │   └── data/
+│       │       └── products.js
+│       ├── package.json
+│       ├── package-lock.json
+│       └── README.md
+│
 └── README.md
 
 ```
@@ -198,6 +230,124 @@ index.js
 App.js (Parent Component – Data Holder)
    |
 StudentCard.jsx (Child Component – Props Receiver)
+```
+
+---
+
+### February 05 — Online Shop with Routing and Nested Components
+
+This module demonstrates a complete single-page application (SPA) implementation using React Router, featuring advanced routing concepts including nested routes, URL parameters, and context-based state management.
+
+#### Overview
+
+The February 05 lab builds a functional online shopping application that showcases modern routing patterns and component composition. The application implements a multi-page experience without page refreshes, demonstrating the power of React Router for creating seamless client-side navigation.
+
+The project implements nested routes for product details, allowing dynamic content rendering based on URL parameters using the `useParams()` hook. A context-based Cart system manages global shopping cart state across multiple components.
+
+#### Learning Objectives
+
+- Master React Router for SPA navigation
+- Implement nested routes for hierarchical navigation
+- Extract and use URL parameters with `useParams()` hook
+- Display product details dynamically based on route parameters
+- Manage global state using Context API and useReducer
+- Implement cart functionality with state persistence
+- Handle 404 error routes with wildcard routing
+- Design responsive layouts with navigation components
+
+#### Application Architecture
+
+```text
+Browser
+   |
+index.js
+   |
+App.js (Router Setup – Route Definitions)
+   |
+   ├── NavBar (Navigation Component)
+   ├── Layout (Page Wrapper)
+   └── Routes
+       ├── Home (Landing Page)
+       ├── Products (Product Listing)
+       │   └── ProductDetail (Nested Route – useParams() for :id)
+       ├── Cart (Shopping Cart)
+       └── NotFound (Wildcard Route – 404 Handler)
+```
+
+#### Key Features Implemented
+
+**Routing Configuration**
+
+- Main route definitions for Home, Products, and Cart pages
+- Nested route for product details under `/products/:id`
+- Wildcard route for handling 404 errors
+- Dynamic routing with URL parameters
+
+**Component Structure**
+
+- **Home**: Landing page with welcome content and navigation
+- **Products**: Product listing with nested route outlet
+- **ProductDetail**: Dynamic component using `useParams()` to fetch product ID from URL
+- **Cart**: Shopping cart display with item management
+- **NavBar**: Navigation component with active route highlighting
+- **Layout**: Wrapper component for consistent page layout
+- **NotFound**: 404 error page for undefined routes
+
+**State Management**
+
+- CartContext using createContext and useReducer for global cart state
+- Cart actions: ADD, REMOVE, UPDATE_QTY, CLEAR
+- Centralized product data in products.js with lookup utility
+
+**Route Hierarchy**
+
+```javascript
+<Route path="/" element={<Home />} />
+<Route path="/products" element={<Products />}>
+  <Route path=":id" element={<ProductDetail />} />
+</Route>
+<Route path="/cart" element={<Cart />} />
+<Route path="*" element={<NotFound />} />
+```
+
+#### Technical Implementation
+
+**React Router v7 Dependencies**
+
+- BrowserRouter for client-side routing
+- Routes and Route for route definitions
+- Link and NavLink for navigation
+- Outlet for rendering nested routes
+- useParams for extracting URL parameters
+- useLocation for detecting current route
+
+**Context-Based Cart Management**
+
+- useReducer for complex state logic
+- Dispatch actions for cart modifications
+- Context Provider wrapping entire application
+- useCart custom hook for consuming cart context
+
+**Dynamic Product Details**
+
+- useParams() hook extracts product ID from URL
+- getProductById() utility function for product lookup
+- Fallback UI for non-existent products
+- Price formatting using Intl API
+
+#### Expected Output
+
+✓ Multi-page SPA with seamless navigation  
+✓ Nested route functionality with dynamic product details  
+✓ URL parameters correctly parsed and displayed  
+✓ Global cart state accessible across all components  
+✓ Responsive design with navigation feedback  
+✓ 404 error handling for undefined routes
+
+**Path**
+
+```text
+Feb_05/online_shop
 ```
 
 ---
