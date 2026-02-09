@@ -119,6 +119,19 @@ DEVOPS-FULLSTACK/
 │       ├── package-lock.json
 │       └── README.md
 │
+├── Feb_09 - Personal Finance/
+│   ├── backend/
+│   │   ├── server.js
+│   │   ├── package.json
+│   │   └── package-lock.json
+│   └── frontend/
+│       ├── src/
+│       │   ├── App.js
+│       │   ├── Expenses.js
+│       │   └── App.css
+│       ├── package.json
+│       └── package-lock.json
+│
 └── README.md
 
 ```
@@ -349,6 +362,81 @@ App.js (Router Setup – Route Definitions)
 ```text
 Feb_05/online_shop
 ```
+
+---
+
+### February 09 — Personal Finance Tracker (Frontend + Backend Integration)
+
+This module demonstrates full stack integration by connecting a React-based frontend with a Node.js and Express backend using RESTful APIs. The application focuses on managing personal expense records and highlights real-world frontend–backend communication patterns.
+
+The backend exposes REST endpoints to fetch and add expense data, while the frontend dynamically renders this data and updates the UI without page reloads.
+
+This lab also involved practical debugging of port conflicts on macOS and reinforced the importance of correct environment setup and service separation.
+
+#### Learning Objectives
+
+- Integrate React frontend with Express backend APIs
+- Use RESTful GET and POST requests for data exchange
+- Manage application state using React hooks
+- Dynamically update UI based on backend responses
+- Handle API errors and connectivity issues gracefully
+- Understand port conflicts and service isolation on macOS
+
+#### Application Architecture
+
+```text
+Browser
+   |
+React Frontend (Port 3000)
+   |
+Fetch / Axios API Calls
+   |
+Express Backend (Port 5001)
+   |
+In-memory Expense Data Store
+```
+
+#### Backend Features
+
+- Express server with CORS and JSON middleware
+- REST API endpoints:
+  - `GET /api/expenses` – Fetch all expenses
+  - `POST /api/expenses` – Add a new expense
+- In-memory data storage for simplicity
+- Port reconfiguration to avoid macOS system conflicts
+
+#### Frontend Features
+
+- React functional components
+- `useEffect` for fetching backend data on load
+- Controlled form inputs for adding expenses
+- Real-time UI updates without page refresh
+- Clean and minimal Apple-inspired UI styling
+
+#### Path
+
+```text
+Feb_09 - Personal Finance/
+├── backend
+│   ├── server.js
+│   ├── package.json
+│   └── package-lock.json
+└── frontend
+    ├── src
+    │   ├── App.js
+    │   ├── Expenses.js
+    │   └── App.css
+    ├── package.json
+    └── package-lock.json
+```
+
+#### Expected Output
+
+✓ Default expenses loaded from backend on page load  
+✓ New expenses added dynamically  
+✓ No page reload during data updates  
+✓ Clear separation between frontend and backend  
+✓ Proper handling of port conflicts on macOS
 
 ---
 
