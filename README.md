@@ -124,8 +124,19 @@ DEVOPS-FULLSTACK/
 │   │   ├── server.js
 │   │   ├── package.json
 │   │   └── package-lock.json
+│   │
 │   └── frontend/
 │       ├── src/
+│       │   ├── App.js
+│       │   ├── App.css
+│       │   ├── App.test.js
+│       │   ├── Expenses.js
+│       │   ├── index.js
+│       │   ├── index.css
+│       │   ├── logo.svg
+│       │   ├── reportWebVitals.js
+│       │   └── setupTests.js
+│       │
 │       ├── package.json
 │       └── package-lock.json
 │
