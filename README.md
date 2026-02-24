@@ -206,6 +206,21 @@ DEVOPS-FULLSTACK/
 │   ├── .env (ignored in Git)
 │   └── .env.production (ignored in Git)
 │
+├── Feb_23 - Finance Tracker Docker Compose/
+│   ├── backend/
+│   │   ├── server.js
+│   │   ├── Dockerfile
+│   │   ├── package.json
+│   │   └── package-lock.json
+│   │
+│   ├── frontend/
+│   │   ├── src/
+│   │   ├── Dockerfile
+│   │   ├── package.json
+│   │   └── package-lock.json
+│   │
+│   └── docker-compose.yml
+│
 └── README.md
 
 ```
@@ -764,6 +779,61 @@ Local MongoDB Service (Port 27017)
 
 ```text
 Feb_19 - Personal Finance Tracker Docker
+```
+
+---
+
+### February 23 — Full Stack Docker Compose Orchestration
+
+This module demonstrates complete full stack container orchestration using Docker Compose. Unlike the previous Docker lab which focused on containerizing a single backend service, this implementation integrates both frontend and backend services into a unified multi-container architecture.
+
+#### Overview
+
+The February 23 lab includes:
+
+- Express.js backend service running in a container
+- React frontend application built using a multi-stage Docker build
+- Nginx-based production serving of static frontend assets
+- Docker Compose orchestration for multi-container networking
+- Internal container-to-container communication using service names
+- Build-time environment variable injection using ARG
+- Resolution of macOS port conflicts through configurable ports
+
+This module simulates a real-world microservice architecture where independent services communicate over an internal Docker network.
+
+#### Application Architecture
+
+```text
+Browser (Port 3000)
+        |
+Nginx Container (Frontend)
+        |
+Internal Docker Network
+        |
+Express Container (Backend - Port 5050)
+```
+
+#### Key Concepts Implemented
+
+- Multi-stage Docker builds for optimized frontend images
+- Container-to-container networking using Docker DNS
+- Port mapping between host and container
+- Environment-based configuration using build arguments
+- Docker Compose service orchestration
+- Proper container lifecycle management
+
+#### Expected Output
+
+✓ Backend container successfully running  
+✓ Frontend container served via Nginx  
+✓ React frontend communicating with backend using service name  
+✓ Transactions rendered dynamically on UI  
+✓ Clean multi-container orchestration using a single command  
+
+#### Path
+
+```text
+Feb_23 - Finance Tracker Docker Compose
 ```
 
 ---
