@@ -221,6 +221,20 @@ DEVOPS-FULLSTACK/
 │   │
 │   └── docker-compose.yml
 │
+├── Mar_12 - Student Dashboard/
+│   ├── public/
+│   │   └── index.html
+│   ├── src/
+│   │   ├── App.js
+│   │   ├── App.css
+│   │   └── index.js
+│   ├── Dockerfile
+│   ├── nginx.conf
+│   ├── .dockerignore
+│   ├── .gitignore
+│   ├── package.json
+│   └── package-lock.json
+│
 └── README.md
 
 ```
@@ -837,6 +851,62 @@ Feb_23 - Finance Tracker Docker Compose
 ```
 
 ---
+
+### March 12 — Student Dashboard (React + Docker Deployment)
+
+This module demonstrates containerizing a modern React-based frontend application and deploying it using a production-ready Docker workflow.
+
+Unlike previous modules that focused primarily on backend services or multi-container orchestration, this lab focuses on packaging a frontend application into a deployable container and serving it using Nginx.
+
+#### Overview
+
+The March 12 lab includes:
+
+- React-based Student Dashboard application
+- Dynamic UI built with React components and state management
+- Production build generation using `npm run build`
+- Multi-stage Docker build for optimized image size
+- Nginx container for serving static frontend assets
+- Docker image creation and container execution
+- Integration with Git for version control
+- Preparation for cloud deployment using Render
+
+This module demonstrates how frontend applications are packaged into lightweight production containers and served efficiently using a web server.
+
+#### Application Architecture
+
+```text
+Browser
+   |
+Nginx Web Server (Docker Container)
+   |
+React Production Build
+   |
+Static Assets (HTML, CSS, JS)
+```
+
+#### Key Concepts Implemented
+
+- Multi-stage Docker builds
+- Production React builds
+- Nginx static file serving
+- Containerized frontend deployment
+- Docker image lifecycle (build → run → stop)
+- Integration with Git-based DevOps workflow
+
+#### Expected Output
+
+✓ React Student Dashboard successfully built  
+✓ Docker image created using multi-stage build  
+✓ Container running Nginx server  
+✓ Dashboard accessible through browser via mapped port  
+✓ Clean container start and stop workflow  
+
+#### Path
+
+```text
+Mar_12 - Student Dashboard
+```
 
 ## DevOps Highlights
 
